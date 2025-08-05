@@ -132,6 +132,7 @@ text_sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
     name: "Kesselzustand"
+    id: "${name}_Kesselzustand"
     register_type: read
     address: 4001
     raw_encode: HEXBYTES
