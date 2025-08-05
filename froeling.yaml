@@ -1,5 +1,9 @@
-esphome:
+substitutions:
   name: froeling # If you're intending to use the Dashboard provided in this Repo - DO NOT CHANGE THE NAME -> readme.md
+  modbus_controller_id: ${name}_modbus_controller
+
+esphome:
+  name: ${name}
 
 esp32:
   board: wemos_d1_mini32
@@ -7,7 +11,7 @@ esp32:
 # Enable logging
 logger:
   baud_rate: 0
-  level: INFO
+  level: INFO # Set to DEBUG for more verbose output
 
 # Enable Home Assistant API
 api:
@@ -25,10 +29,6 @@ wifi:
 web_server:
   port: 80
 
-substitutions:
-  name: froeling
-  modbus_controller_id: froeling
-
 uart:
   - id: uartfroeling
     tx_pin: 17
@@ -43,12 +43,12 @@ modbus:
   uart_id: uartfroeling
 
 modbus_controller:
-  - id: froeling
+  - id: ${modbus_controller_id}
     address: 2
     modbus_id: modbus1
     setup_priority: -10
-    update_interval: "60s"
-    command_throttle: "50ms"
+    update_interval: 60s
+    command_throttle: 50ms
 
 switch:
   - platform: restart
@@ -56,17 +56,18 @@ switch:
 
 packages:
   remote_package:
-    url: https://github.com/GyroGearl00se/ESPHome-Froeling-Lambdatronic_3200
-    ref: main
-    files: [
-      austragung.yaml,
-      boiler_01.yaml,
-      heizkreis01.yaml,
-      heizkreis02.yaml,
-      kessel.yaml,
-      puffer_01.yaml,
-      zirkulationspumpe.yaml,
-      solarthermie.yaml,
+    url: https://github.com/buslm/ESPHome-Froeling-Lambdatronic_3200
+    ref: ha-2025-06
+    files:
+      [
+        austragung.yaml,
+        boiler_01.yaml,
+        heizkreis01.yaml,
+        heizkreis02.yaml,
+        kessel.yaml,
+        puffer_01.yaml,
+        zirkulationspumpe.yaml,
+        solarthermie.yaml,
       ]
 
     refresh: 1d
@@ -74,8 +75,7 @@ packages:
 sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Aussentemperatur"
-    id: ${name}_Aussentemperatur
+    name: "Aussentemperatur"
     register_type: read
     address: 1000
     unit_of_measurement: "°C"
@@ -88,8 +88,7 @@ sensor:
 number:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Bei welcher RL Temperatur an der Zirkulationsleitung soll die Pumpe ausschalten"
-    id: ${name}_Bei_welcher_RL_Temperatur_an_der_Zirkulationsleitung_soll_die_Pumpe_ausschalten
+    name: "Bei welcher RL Temperatur an der Zirkulationsleitung soll die Pumpe ausschalten"
     address: 600
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -99,8 +98,7 @@ number:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Kessel-Solltemperatur"
-    id: ${name}_Kessel_Solltemperatur
+    name: "Kessel-Solltemperatur"
     address: 0
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -111,8 +109,7 @@ number:
 text_sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Anlagenzustand"
-    id: ${name}_Anlagenzustand
+    name: "Anlagenzustand"
     register_type: read
     address: 4000
     raw_encode: HEXBYTES
@@ -134,8 +131,7 @@ text_sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Kesselzustand"
-    id: ${name}_Kesselzustand
+    name: "Kesselzustand"
     register_type: read
     address: 4001
     raw_encode: HEXBYTES
