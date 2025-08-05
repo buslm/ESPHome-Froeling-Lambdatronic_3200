@@ -160,11 +160,11 @@ views:
             name: Saugzug - Ansteuerung
           - entity: sensor.froeling_restsauerstoffgehalt
             name: Restsauerstoffgehalt
-          - entity: sensor.froeling_primarluft
+          - entity: sensor.froeling_prim_rluft
             name: Primärluft
-          - entity: sensor.froeling_sekundarluft
+          - entity: sensor.froeling_sekund_rluft
             name: Sekundärluft
-          - entity: sensor.froeling_rucklauffuhler
+          - entity: sensor.froeling_r_cklauff_hler
             name: Rücklauffühler
         title: Zustand
       - type: entities
@@ -216,10 +216,10 @@ views:
       - type: entities
         entities:
           - entity: >-
-              number.froeling_hk1_gewunschte_vorlauf_temperatur_bei_10degc_aussentemperatur
+              number.froeling_hk1_gew_nschte_vorlauf_temperatur_bei_10_c_au_entemperatur
             name: Gewünschte Vorlauf-temperatur bei -10°C Außentemperatur
           - entity: >-
-              number.froeling_hk1_gewunschte_vorlauf_temperatur_bei_10degc_aussentemperatur_2
+              number.froeling_hk1_gew_nschte_vorlauf_temperatur_bei_10_c_au_entemperatur_2
             name: Gewünschte Vorlauf-temperatur bei +10°C Außentemperatur
           - entity: >-
               number.froeling_hk1_heizkreispumpe_ausschalten_wenn_vorlauf_soll_kleiner_ist_als
@@ -228,19 +228,19 @@ views:
               number.froeling_hk1_absenkung_der_vorlauftemperatur_im_absenkbetrieb
             name: Absenkung der Vorlauftemperatur im Absenkbetrieb
           - entity: >-
-              number.froeling_hk1_aussentemperatur_unter_der_die_heizkreispumpe_im_heizbetrieb_einschaltet
+              number.froeling_hk1_au_entemperatur_unter_der_die_heizkreispumpe_im_heizbetrieb_einschaltet
             name: >-
               Außentemperatur, unter der die Heizkreispumpe im Heizbetrieb
               einschaltet
           - entity: >-
-              number.froeling_hk1_aussentemperatur_unter_der_die_heizkreispumpe_im_absenkbetrieb_einschaltet
+              number.froeling_hk1_au_entemperatur_unter_der_die_heizkreispumpe_im_absenkbetrieb_einschaltet
             name: >-
               Außentemperatur, unter der die Heizkreispumpe im Absenkbetrieb
               einschaltet
           - entity: number.froeling_hk1_frostschutztemperatur
             name: Frostschutztemperatur
           - entity: >-
-              number.froeling_hk1_temp_am_puffer_oben_ab_der_der_uberhitzungsschutz_aktiv_wird
+              number.froeling_hk2_temp_am_puffer_oben_ab_der_der_berhitzungsschutz_aktiv_wird
             name: Temp. am Puffer oben ab der der Überhitzungsschutz aktiv wird
         title: Einstellungen
   - title: Heizkreis02
@@ -287,31 +287,31 @@ views:
       - type: entities
         entities:
           - entity: >-
-              number.froeling_hk2_gewunschte_vorlauf_temperatur_bei_10degc_aussentemperatur
+              number.froeling_hk2_gew_nschte_vorlauf_temperatur_bei_10_c_au_entemperatur
             name: Gewünschte Vorlauf-temperatur bei -10°C Außentemperatur
           - entity: >-
-              number.froeling_hk2_gewunschte_vorlauf_temperatur_bei_10degc_aussentemperatur_2
+              number.froeling_hk2_gew_nschte_vorlauf_temperatur_bei_10_c_au_entemperatur_2
             name: Gewünschte Vorlauf-temperatur bei +10°C Außentemperatur
           - entity: >-
               number.froeling_hk2_heizkreispumpe_ausschalten_wenn_vorlauf_soll_kleiner_ist_als
             name: Heizkreispumpe ausschalten wenn Vorlauf Soll kleiner ist als
           - entity: >-
-              number.froeling_hk2_absenkung_der_vorlauftemperatur_im_absenkbetrieb
+              number.froeling_hk1_absenkung_der_vorlauftemperatur_im_absenkbetrieb
             name: Absenkung der Vorlauftemperatur im Absenkbetrieb
           - entity: >-
-              number.froeling_hk2_aussentemperatur_unter_der_die_heizkreispumpe_im_heizbetrieb_einschaltet
+              number.froeling_hk2_au_entemperatur_unter_der_die_heizkreispumpe_im_heizbetrieb_einschaltet
             name: >-
               Außentemperatur, unter der die Heizkreispumpe im Heizbetrieb
               einschaltet
           - entity: >-
-              number.froeling_hk2_aussentemperatur_unter_der_die_heizkreispumpe_im_absenkbetrieb_einschaltet
+              number.froeling_hk2_au_entemperatur_unter_der_die_heizkreispumpe_im_absenkbetrieb_einschaltet
             name: >-
               Außentemperatur, unter der die Heizkreispumpe im Absenkbetrieb
               einschaltet
-          - entity: number.froeling_hk2_frostschutztemperatur
+          - entity: number.froeling_hk1_frostschutztemperatur
             name: Frostschutztemperatur
           - entity: >-
-              number.froeling_hk2_temp_am_puffer_oben_ab_der_der_uberhitzungsschutz_aktiv_wird
+              number.froeling_hk2_temp_am_puffer_oben_ab_der_der_berhitzungsschutz_aktiv_wird
             name: Temp. am Puffer oben ab der der Überhitzungsschutz aktiv wird
         title: Einstellungen
   - title: Boiler 01
@@ -359,7 +359,7 @@ views:
         title: Zustand
       - type: entities
         entities:
-          - entity: number.froeling_boiler_1_gewunschte_boilertemperatur
+          - entity: number.froeling_boiler_1_gew_nschte_boilertemperatur
             name: Gewünschte Boilertemperatur
           - entity: number.froeling_boiler_1_nachladen_wenn_boilertemperatur_unter
             name: Nachladen wenn Boilertemperatur unter
@@ -507,9 +507,9 @@ views:
                   class: '${(entity.state == "on") ? "fill-green" : "fill-grey"}'
       - type: entities
         entities:
-          - entity: sensor.froeling_ruecklauftemperatur_an_der_zirkulations_leitung
+          - entity: sensor.froeling_r_cklauftemperatur_an_der_zirkulations_leitung
             name: Rücklauftemperatur an der Zirkulations Leitung
-          - entity: sensor.froeling_stromungsschalter_an_der_brauchwasser_leitung
+          - entity: sensor.froeling_str_mungsschalter_an_der_brauchwasser_leitung
             name: Strömungsschalter an der Brauchwasser Leitung
           - entity: sensor.froeling_drehzahl_der_zirkulations_pumpe
             name: Drehzahl der Zirkulations Pumpe
@@ -560,10 +560,23 @@ views:
                   class: '${(entity.state == "on") ? "fill-green" : "fill-grey"}'
       - type: entities
         entities:
-          - entity: sensor.froeling_laufzeit_kollektorpumpe
+          - entity: sensor.froeling_solar_kollektor_r_cklauftemperatur
+          - entity: sensor.froeling_solar_kollektor_vorlauftemperatur
+          - entity: sensor.froeling_solar_kollektortemperatur
+          - entity: sensor.froeling_aktuelle_leistung_solar_wmz
+          - entity: sensor.froeling_ansteuerung_kollektorpumpe
+          - entity: sensor.froeling_aktuelle_ansteuerung_der_kollektor_boiler_pumpe
+          - entity: sensor.froeling_solar_dfl_sensor_l_h
+          - entity: sensor.froeling_solar_tagesertrag
+          - entity: sensor.froeling_solar_gesamtertrag_kwh
+          - entity: sensor.froeling_solar_ventil_f_r_umschaltung_puffer_oben_und_unten
+        title: Zustand
+      - type: entities
+        entities:
+          - entity: sensor.froeling_r_cklauftemperatur_an_der_zirkulations_leitung
             name: Rücklauftemperatur an der Zirkulations Leitung
-          - entity: sensor.froeling_laufzeit_kollektorpumpe
+          - entity: sensor.froeling_str_mungsschalter_an_der_brauchwasser_leitung
             name: Strömungsschalter an der Brauchwasser Leitung
-          - entity: sensor.froeling_laufzeit_kollektorpumpe
+          - entity: sensor.froeling_drehzahl_der_zirkulations_pumpe
             name: Drehzahl der Zirkulations Pumpe
         title: Einstellungen
