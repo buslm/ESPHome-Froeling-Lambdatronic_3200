@@ -1,8 +1,7 @@
-sensor:  
+sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Solar - Kollektor Rücklauftemperatur"
-    id: ${name}_kollektor_rueklauftemperatur
+    name: "Solar - Kollektor Rücklauftemperatur"
     register_type: read
     address: 2611
     unit_of_measurement: "°C"
@@ -14,8 +13,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Solar - Kollektor Vorlauftemperatur"
-    id: ${name}_kollektor_vorlauftemperatur
+    name: "Solar - Kollektor Vorlauftemperatur"
     register_type: read
     address: 2612
     unit_of_measurement: "°C"
@@ -27,8 +25,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Solar - Kollektortemperatur"
-    id: ${name}_kollektortemperatur
+    name: "Solar - Kollektortemperatur"
     register_type: read
     address: 2601
     unit_of_measurement: "°C"
@@ -37,11 +34,10 @@ sensor:
     value_type: U_WORD
     filters:
       - multiply: 0.5
-      
+
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Aktuelle Leistung Solar WMZ"
-    id: ${name}_solar_wmz
+    name: "Aktuelle Leistung Solar WMZ"
     register_type: read
     address: 2610
     unit_of_measurement: "kw"
@@ -53,17 +49,15 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Ansteuerung Kollektorpumpe"
-    id: ${name}_kollektor_pumpe
+    name: "Ansteuerung Kollektorpumpe"
     register_type: read
     address: 2600
     unit_of_measurement: "%"
     value_type: U_WORD
-    
+
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Aktuelle Ansteuerung der Kollektor - Boiler Pumpe"
-    id: ${name}_kollektor_pumpe_laufzeit
+    name: "Aktuelle Ansteuerung der Kollektor - Boiler Pumpe"
     register_type: read
     address: 2622
     unit_of_measurement: "h"
@@ -71,8 +65,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Solar - DFL Sensor [l/h]"
-    id: ${name}_solar_durchfluss_liter
+    name: "Solar - DFL Sensor [l/h]"
     register_type: read
     address: 2609
     unit_of_measurement: "l/h"
@@ -82,8 +75,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Solar - Tagesertrag"
-    id: ${name}_solarkollektor_ertrag
+    name: "Solar - Tagesertrag"
     register_type: read
     address: 2619
     unit_of_measurement: "kwh"
@@ -93,8 +85,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Solar - Gesamtertrag kWh"
-    id: ${name}_gesamtertrag_kwh
+    name: "Solar - Gesamtertrag kWh"
     register_type: read
     address: 2621
     unit_of_measurement: "kwh"
@@ -104,8 +95,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${name} Solar - Ventil für Umschaltung Puffer oben und unten"
-    id: ${name}_kollektor_umschaltventil
+    name: "Solar - Ventil für Umschaltung Puffer oben und unten"
     register_type: read
     address: 2607
     unit_of_measurement: "%"
