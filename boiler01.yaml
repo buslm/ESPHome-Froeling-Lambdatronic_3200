@@ -45,7 +45,7 @@ binary_sensor:
   - platform: template
     name: "boiler01_pumpe_an_aus"
     lambda: |-
-      if (id(Boiler_1_Pumpe_Ansteuerung).state > 0) {
+      if (id(boiler01_pumpe_ansteuerung).state > 0) {
         return true;
       } else {
         return false;
