@@ -149,23 +149,31 @@ views:
                       class: '${(entity.state == "on") ? "fill-green" : "fill-grey"}'
       - type: entities
         entities:
-          - entity: sensor.froeling_kesseltemperatur
+          - entity: sensor.froeling_kessel_temperatur
             name: Kesseltemperatur
-          - entity: sensor.froeling_abgastemperatur
+            secondary_info: last-changed
+          - entity: sensor.froeling_kessel_abgastemperatur
             name: Abgastemperatur
+            secondary_info: last-changed
           - entity: >-
-              sensor.froeling_verbleibende_heizstunden_bis_zur_asche_entleeren_warnung
+              sensor.froeling_kessel_verbleibende_heizstunden_bis_zur_asche_entleeren_warnung
             name: Verbleibende Heizstunden bis zur Asche entleeren Warnung
-          - entity: sensor.froeling_saugzug_ansteuerung
+            secondary_info: last-changed
+          - entity: sensor.froeling_kessel_saugzug_ansteuerung
             name: Saugzug - Ansteuerung
-          - entity: sensor.froeling_restsauerstoffgehalt
+            secondary_info: last-changed
+          - entity: sensor.froeling_kessel_restsauerstoffgehalt
             name: Restsauerstoffgehalt
-          - entity: sensor.froeling_prim_rluft
+            secondary_info: last-changed
+          - entity: sensor.froeling_kessel_primaerluft
             name: Primärluft
-          - entity: sensor.froeling_sekund_rluft
+            secondary_info: last-changed
+          - entity: sensor.froeling_kessel_sekundaerluft
             name: Sekundärluft
-          - entity: sensor.froeling_r_cklauff_hler
+            secondary_info: last-changed
+          - entity: sensor.froeling_kessel_ruecklauffuehler
             name: Rücklauffühler
+            secondary_info: last-changed
         title: Zustand
       - type: entities
         entities:
@@ -173,7 +181,7 @@ views:
             name: Kessel-Solltemperatur
         title: Einstellungen
   - title: Heizkreis01
-    path: heizkreis01
+    path: hk01
     badges: []
     cards:
       - type: horizontal-stack
@@ -206,45 +214,45 @@ views:
                       class: '${(entity.state == "on") ? "fill-green" : "fill-grey"}'
       - type: entities
         entities:
-          - entity: sensor.froeling_hk1_vorlauf_isttemperatur
+          - entity: sensor.froeling_hk01_vorlauf_isttemperatur
             name: Vorlauf-Isttempratur
-          - entity: sensor.froeling_hk1_vorlauf_solltemperatur
+            secondary_info: last-changed
+          - entity: sensor.froeling_hk01_vorlauf_solltemperatur
             name: Vorlauf-Solltemperatur
-          - entity: sensor.froeling_aussentemperatur
+          - entity: sensor.froeling_anlage_aussentemperatur
             name: Außentemperatur
+            secondary_info: last-changed
         title: Zustand
       - type: entities
         entities:
-          - entity: >-
-              number.froeling_hk1_gew_nschte_vorlauf_temperatur_bei_10_c_au_entemperatur
+          - entity: number.froeling_hk01_vorlauf_temperatur_minus_10c_aussentemperatur
             name: Gewünschte Vorlauf-temperatur bei -10°C Außentemperatur
-          - entity: >-
-              number.froeling_hk1_gew_nschte_vorlauf_temperatur_bei_10_c_au_entemperatur_2
+          - entity: number.froeling_hk01_vorlauf_temperatur_10c_aussentemperatur
             name: Gewünschte Vorlauf-temperatur bei +10°C Außentemperatur
           - entity: >-
-              number.froeling_hk1_heizkreispumpe_ausschalten_wenn_vorlauf_soll_kleiner_ist_als
+              number.froeling_hk01_heizkreispumpe_ausschalten_wenn_vorlauf_soll_kleiner_ist_als
             name: Heizkreispumpe ausschalten wenn Vorlauf Soll kleiner ist als
           - entity: >-
-              number.froeling_hk1_absenkung_der_vorlauftemperatur_im_absenkbetrieb
+              number.froeling_hk01_absenkung_der_vorlauftemperatur_im_absenkbetrieb
             name: Absenkung der Vorlauftemperatur im Absenkbetrieb
           - entity: >-
-              number.froeling_hk1_au_entemperatur_unter_der_die_heizkreispumpe_im_heizbetrieb_einschaltet
+              number.froeling_hk01_aussentemperatur_unter_der_die_heizkreispumpe_im_heizbetrieb_einschaltet
             name: >-
               Außentemperatur, unter der die Heizkreispumpe im Heizbetrieb
               einschaltet
           - entity: >-
-              number.froeling_hk1_au_entemperatur_unter_der_die_heizkreispumpe_im_absenkbetrieb_einschaltet
+              number.froeling_hk01_aussentemperatur_unter_der_die_heizkreispumpe_im_absenkbetrieb_einschaltet
             name: >-
               Außentemperatur, unter der die Heizkreispumpe im Absenkbetrieb
               einschaltet
-          - entity: number.froeling_hk1_frostschutztemperatur
+          - entity: number.froeling_hk01_frostschutztemperatur
             name: Frostschutztemperatur
           - entity: >-
-              number.froeling_hk2_temp_am_puffer_oben_ab_der_der_berhitzungsschutz_aktiv_wird
+              number.froeling_hk01_temp_am_puffer_oben_ab_der_der_ueberhitzungsschutz_aktiv_wird
             name: Temp. am Puffer oben ab der der Überhitzungsschutz aktiv wird
         title: Einstellungen
   - title: Heizkreis02
-    path: heizkreis02
+    path: hk02
     badges: []
     cards:
       - type: horizontal-stack
@@ -277,45 +285,45 @@ views:
                       class: '${(entity.state == "on") ? "fill-green" : "fill-grey"}'
       - type: entities
         entities:
-          - entity: sensor.froeling_hk2_vorlauf_isttemperatur
+          - entity: sensor.froeling_hk01_vorlauf_isttemperatur
             name: Vorlauf-Isttempratur
-          - entity: sensor.froeling_hk2_vorlauf_solltemperatur
+            secondary_info: last-changed
+          - entity: sensor.froeling_hk01_vorlauf_solltemperatur
             name: Vorlauf-Solltemperatur
-          - entity: sensor.froeling_aussentemperatur
+          - entity: sensor.froeling_anlage_aussentemperatur
             name: Außentemperatur
+            secondary_info: last-changed
         title: Zustand
       - type: entities
         entities:
-          - entity: >-
-              number.froeling_hk2_gew_nschte_vorlauf_temperatur_bei_10_c_au_entemperatur
+          - entity: number.froeling_hk02_vorlauf_temperatur_minus_10c_aussentemperatur
             name: Gewünschte Vorlauf-temperatur bei -10°C Außentemperatur
-          - entity: >-
-              number.froeling_hk2_gew_nschte_vorlauf_temperatur_bei_10_c_au_entemperatur_2
+          - entity: number.froeling_hk02_vorlauf_temperatur_10c_aussentemperatur
             name: Gewünschte Vorlauf-temperatur bei +10°C Außentemperatur
           - entity: >-
-              number.froeling_hk2_heizkreispumpe_ausschalten_wenn_vorlauf_soll_kleiner_ist_als
+              number.froeling_hk02_heizkreispumpe_ausschalten_wenn_vorlauf_soll_kleiner_ist_als
             name: Heizkreispumpe ausschalten wenn Vorlauf Soll kleiner ist als
           - entity: >-
-              number.froeling_hk1_absenkung_der_vorlauftemperatur_im_absenkbetrieb
+              number.froeling_hk02_absenkung_der_vorlauftemperatur_im_absenkbetrieb
             name: Absenkung der Vorlauftemperatur im Absenkbetrieb
           - entity: >-
-              number.froeling_hk2_au_entemperatur_unter_der_die_heizkreispumpe_im_heizbetrieb_einschaltet
+              number.froeling_hk02_aussentemperatur_unter_der_die_heizkreispumpe_im_heizbetrieb_einschaltet
             name: >-
               Außentemperatur, unter der die Heizkreispumpe im Heizbetrieb
               einschaltet
           - entity: >-
-              number.froeling_hk2_au_entemperatur_unter_der_die_heizkreispumpe_im_absenkbetrieb_einschaltet
+              number.froeling_hk02_aussentemperatur_unter_der_die_heizkreispumpe_im_absenkbetrieb_einschaltet
             name: >-
               Außentemperatur, unter der die Heizkreispumpe im Absenkbetrieb
               einschaltet
-          - entity: number.froeling_hk1_frostschutztemperatur
+          - entity: number.froeling_hk02_frostschutztemperatur
             name: Frostschutztemperatur
           - entity: >-
-              number.froeling_hk2_temp_am_puffer_oben_ab_der_der_berhitzungsschutz_aktiv_wird
+              number.froeling_hk02_temp_am_puffer_oben_ab_der_der_ueberhitzungsschutz_aktiv_wird
             name: Temp. am Puffer oben ab der der Überhitzungsschutz aktiv wird
         title: Einstellungen
-  - title: Boiler 01
-    path: boiler-01
+  - title: Boiler01
+    path: boiler01
     badges: []
     cards:
       - type: custom:floorplan-card
@@ -352,20 +360,23 @@ views:
                   class: '${(entity.state == "on") ? "fill-green" : "fill-grey"}'
       - type: entities
         entities:
-          - entity: sensor.froeling_boiler_1_temperatur_oben
+          - entity: sensor.froeling_boiler01_temperatur_oben
             name: Temperatur Oben
-          - entity: sensor.froeling_boiler_1_pumpe_ansteuerung
+            secondary_info: last-changed
+          - entity: sensor.froeling_boiler01_pumpe_ansteuerung
             name: Pumpe Ansteuerung
+            secondary_info: last-changed
         title: Zustand
       - type: entities
         entities:
-          - entity: number.froeling_boiler_1_gew_nschte_boilertemperatur
+          - entity: number.froeling_boiler01_gewuenschte_boilertemperatur
             name: Gewünschte Boilertemperatur
-          - entity: number.froeling_boiler_1_nachladen_wenn_boilertemperatur_unter
+          - entity: number.froeling_boiler01_nachladen_wenn_boilertemperatur_unter
             name: Nachladen wenn Boilertemperatur unter
         title: Einstellungen
-  - title: Puffer 01
-    path: puffer-01
+    type: masonry
+  - title: Puffer01
+    path: puffer01
     badges: []
     cards:
       - type: custom:floorplan-card
@@ -414,20 +425,26 @@ views:
                   class: '${(entity.state == "Heizen") ? "fill-red" : "fill-grey"}'
       - type: entities
         entities:
-          - entity: sensor.froeling_puffer_1_temperatur_oben
+          - entity: sensor.froeling_puffer01_temperatur_oben
             name: Temperatur Oben
-          - entity: sensor.froeling_puffer_1_temperatur_mitte
+            secondary_info: last-changed
+          - entity: sensor.froeling_puffer01_temperatur_mitte
             name: Temperatur Mitte
-          - entity: sensor.froeling_puffer_1_temperatur_unten
+            secondary_info: last-changed
+          - entity: sensor.froeling_puffer01_temperatur_unten
             name: Temperatur Unten
-          - entity: sensor.froeling_puffer_1_ladezustand
+            secondary_info: last-changed
+          - entity: sensor.froeling_puffer01_ladezustand
             name: Ladezustand
-          - entity: sensor.froeling_puffer_1_pufferpumpen_ansteuerung
+            secondary_info: last-changed
+          - entity: sensor.froeling_puffer01_pufferpumpen_ansteuerung
             name: Pufferpumpen Ansteuerung
+            secondary_info: last-changed
         title: Zustand
       - type: entities
         entities: []
         title: Einstellungen
+    type: masonry
   - title: Austragung
     path: austragung
     badges: []
@@ -459,11 +476,17 @@ views:
                 service_data: ${entity.state + "%"}
       - type: entities
         entities:
-          - entity: sensor.froeling_fuellstand_im_pelletsbehaelter
-          - entity: sensor.froeling_resetierbarer_t_zaehler
-          - entity: sensor.froeling_resetierbarer_kg_zaehler
-          - entity: sensor.froeling_pelletlager_restbestand
-          - entity: sensor.froeling_pelletverbrauch_gesamt
+          - entity: sensor.froeling_austragung_pelletsbehaelter_fuellstand
+            name: Sacksilo Füllstand
+          - entity: sensor.froeling_austragung_resetierbarer_t_zaehler
+            name: Zählwert Verbauch
+          - entity: sensor.froeling_austragung_resetierbarer_kg_zaehler
+            name: Zählwert Verbauch
+          - entity: sensor.froeling_austragung_pelletlager_restbestand
+            secondary_info: last-changed
+            name: Sacksilo Restbestand
+          - entity: sensor.froeling_austragung_pelletverbrauch_gesamt
+            name: Gesamtverbauch seit Beginn
         title: Zustand
       - type: entities
         entities: []
@@ -507,17 +530,22 @@ views:
                   class: '${(entity.state == "on") ? "fill-green" : "fill-grey"}'
       - type: entities
         entities:
-          - entity: sensor.froeling_r_cklauftemperatur_an_der_zirkulations_leitung
+          - entity: >-
+              sensor.froeling_zirkulationspumpe_ruecklauftemperatur_an_der_zirkulations_leitung
             name: Rücklauftemperatur an der Zirkulations Leitung
-          - entity: sensor.froeling_str_mungsschalter_an_der_brauchwasser_leitung
+            secondary_info: last-changed
+          - entity: >-
+              sensor.froeling_zirkulationspumpe_stoemungsschalter_an_der_brauchwasser_leitung
             name: Strömungsschalter an der Brauchwasser Leitung
-          - entity: sensor.froeling_drehzahl_der_zirkulations_pumpe
+            secondary_info: last-changed
+          - entity: sensor.froeling_zirkulationspumpe_drehzahl_der_zirkulations_pumpe
             name: Drehzahl der Zirkulations Pumpe
+            secondary_info: last-changed
         title: Zustand
       - type: entities
         entities:
           - entity: >-
-              number.froeling_bei_welcher_rl_temperatur_an_der_zirkulationsleitung_soll_die_pumpe_ausschalten
+              number.froeling_kessel_bei_welcher_rl_temperatur_an_der_zirkulationsleitung_soll_die_pumpe_ausschalten
             name: >-
               Bei welcher RL Temperatur an der Zirkulationsleitung soll die
               Pumpe ausschalten
@@ -560,23 +588,44 @@ views:
                   class: '${(entity.state == "on") ? "fill-green" : "fill-grey"}'
       - type: entities
         entities:
-          - entity: sensor.froeling_solar_kollektor_r_cklauftemperatur
+          - entity: sensor.froeling_solar_kollektor_ruecklauftemperatur
+            secondary_info: last-changed
+            name: Kollektor Rücklauftemperatur
           - entity: sensor.froeling_solar_kollektor_vorlauftemperatur
+            name: Kollektor Vorlauftemperatur
+            secondary_info: last-changed
           - entity: sensor.froeling_solar_kollektortemperatur
-          - entity: sensor.froeling_aktuelle_leistung_solar_wmz
-          - entity: sensor.froeling_ansteuerung_kollektorpumpe
-          - entity: sensor.froeling_aktuelle_ansteuerung_der_kollektor_boiler_pumpe
-          - entity: sensor.froeling_solar_dfl_sensor_l_h
+            name: Kollektortemperatur
+            secondary_info: last-changed
+          - entity: sensor.froeling_solar_aktuelle_leistung_wmz
+            name: Aktuelle Leistung WMZ
+            secondary_info: last-changed
+          - entity: sensor.froeling_solar_ansteuerung_kollektorpumpe
+            name: Ansteuerung Kollektorpumpe
+            secondary_info: last-changed
+          - entity: sensor.froeling_solar_aktuelle_ansteuerung_kollektor_boiler_pumpe
+            name: Ansteuerung Kollektor-/Boilerpumpe
+            secondary_info: last-changed
+          - entity: sensor.froeling_solar_dfl_sensor_l_pro_h
+            name: Durchflusssensor
+            secondary_info: last-changed
           - entity: sensor.froeling_solar_tagesertrag
+            name: Tagesertrag
+            secondary_info: none
           - entity: sensor.froeling_solar_gesamtertrag_kwh
-          - entity: sensor.froeling_solar_ventil_f_r_umschaltung_puffer_oben_und_unten
+            name: Gesamtertrag
+          - entity: sensor.froeling_solar_ventil_fuer_umschaltung_puffer_oben_unten
+            name: Ventil für Umschaltung Puffer oben/unten
+            secondary_info: last-changed
         title: Zustand
       - type: entities
         entities:
-          - entity: sensor.froeling_r_cklauftemperatur_an_der_zirkulations_leitung
+          - entity: >-
+              sensor.froeling_zirkulationspumpe_ruecklauftemperatur_an_der_zirkulations_leitung
             name: Rücklauftemperatur an der Zirkulations Leitung
-          - entity: sensor.froeling_str_mungsschalter_an_der_brauchwasser_leitung
+          - entity: >-
+              sensor.froeling_zirkulationspumpe_stoemungsschalter_an_der_brauchwasser_leitung
             name: Strömungsschalter an der Brauchwasser Leitung
-          - entity: sensor.froeling_drehzahl_der_zirkulations_pumpe
+          - entity: sensor.froeling_zirkulationspumpe_drehzahl_der_zirkulations_pumpe
             name: Drehzahl der Zirkulations Pumpe
         title: Einstellungen
