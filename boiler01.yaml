@@ -1,7 +1,7 @@
 sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Boiler_1_Temperatur_oben"
+    name: "boiler01_temperatur_oben"
     register_type: read
     address: 1630
     unit_of_measurement: "°C"
@@ -13,8 +13,8 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Boiler_1_Pumpe_Ansteuerung"
-    id: "Boiler_1_Pumpe_Ansteuerung"
+    name: "boiler01_pumpe_ansteuerung"
+    id: "boiler01_pumpe_ansteuerung"
     register_type: read
     address: 1632
     unit_of_measurement: "%"
@@ -23,7 +23,7 @@ sensor:
 number:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "BBoiler_1_Gewuenschte_Boilertemperatur"
+    name: "boiler01_gewuenschte_boilertemperatur"
     address: 1631
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -33,7 +33,7 @@ number:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Boiler_1_Nachladen_wenn_Boilertemperatur_unter"
+    name: "boiler01_nachladen_wenn_boilertemperatur_unter"
     address: 1632
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -43,7 +43,7 @@ number:
 
 binary_sensor:
   - platform: template
-    name: "boiler_1_pumpe_an_aus"
+    name: "boiler01_pumpe_an_aus"
     lambda: |-
       if (id(Boiler_1_Pumpe_Ansteuerung).state > 0) {
         return true;

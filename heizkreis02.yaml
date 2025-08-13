@@ -1,7 +1,7 @@
 sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK02_Vorlauf_Isttemperatur"
+    name: "hk02_vorlauf_isttemperatur"
     register_type: read
     address: 1060
     unit_of_measurement: "°C"
@@ -13,7 +13,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK02_Vorlauf_Solltemperatur"
+    name: "hk02_vorlauf_solltemperatur"
     register_type: read
     address: 1061
     unit_of_measurement: "°C"
@@ -26,14 +26,14 @@ sensor:
 binary_sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "hk2_pumpe_an_aus"
+    name: "hk02_pumpe_an_aus"
     register_type: coil
     address: 1059
 
 number:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK2_Vorlauf_Temperatur_10C_Aussentemperatur"
+    name: "hk02_vorlauf_temperatur_10c_aussentemperatur"
     address: 1061
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -43,7 +43,7 @@ number:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK2_Vorlauf_Temperatur_minus_10C_Aussentemperatur"
+    name: "hk02_vorlauf_temperatur_minus_10c_aussentemperatur"
     address: 1062
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -53,17 +53,7 @@ number:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK2_Heizkreispumpe_ausschalten_wenn_Vorlauf_Soll_kleiner_ist_als"
-    address: 1069
-    unit_of_measurement: "°C"
-    value_type: U_WORD
-    multiply: 2
-    min_value: 10
-    max_value: 30
-
-  - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
-    name: "HK2_Absenkung_der_Vorlauftemperatur_im_Absenkbetrieb"
+    name: "hk02_absenkung_der_vorlauftemperatur_im_absenkbetrieb"
     address: 1063
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -73,7 +63,7 @@ number:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK2_Aussentemperatur_unter_der_die_Heizkreispumpe_im_Heizbetrieb_einschaltet"
+    name: "hk02_aussentemperatur_unter_der_die_heizkreispumpe_im_heizbetrieb_einschaltet"
     address: 1066
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -83,7 +73,7 @@ number:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK2_Aussentemperatur_unter_der_die_Heizkreispumpe_im_Absenkbetrieb_einschaltet"
+    name: "hk02_aussentemperatur_unter_der_die_heizkreispumpe_im_absenkbetrieb_einschaltet"
     address: 1067
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -93,7 +83,7 @@ number:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK2_Frostschutztemperatur"
+    name: "hk02_frostschutztemperatur"
     address: 1068
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -103,7 +93,17 @@ number:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK2_Temp_am_Puffer_oben_ab_der_der_Ueberhitzungsschutz_aktiv_wird"
+    name: "hk02_heizkreispumpe_ausschalten_wenn_vorlauf_soll_kleiner_ist_als"
+    address: 1069
+    unit_of_measurement: "°C"
+    value_type: U_WORD
+    multiply: 2
+    min_value: 10
+    max_value: 30
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "hk02_temp_am_puffer_oben_ab_der_der_ueberhitzungsschutz_aktiv_wird"
     address: 1078
     unit_of_measurement: "°C"
     value_type: U_WORD
@@ -113,7 +113,7 @@ number:
 select:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "HK2_Betriebsart"
+    name: "hk02_betriebsart"
     address: 8047
     value_type: U_WORD
     optionsmap:

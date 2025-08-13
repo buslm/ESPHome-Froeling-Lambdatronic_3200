@@ -1,7 +1,7 @@
 sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Puffer_1_Temperatur_oben"
+    name: "puffer01_temperatur_oben"
     register_type: read
     address: 2000
     unit_of_measurement: "°C"
@@ -13,7 +13,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Puffer_1_Temperatur_mitte"
+    name: "puffer01_temperatur_mitte"
     register_type: read
     address: 2001
     unit_of_measurement: "°C"
@@ -25,7 +25,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Puffer_1_Temperatur_unten"
+    name: "puffer01_temperatur_unten"
     register_type: read
     address: 2002
     unit_of_measurement: "°C"
@@ -37,8 +37,8 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Puffer_1_Pufferpumpen_Ansteuerung"
-    id: "Puffer_1_Pufferpumpen_Ansteuerung"
+    name: "puffer01_pufferpumpen_ansteuerung"
+    id: "puffer01_pufferpumpen_ansteuerung"
     register_type: read
     address: 2003
     unit_of_measurement: "%"
@@ -46,7 +46,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Puffer_1_Ladezustand"
+    name: "puffer01_ladezustand"
     register_type: read
     address: 2006
     unit_of_measurement: "%"
@@ -54,7 +54,7 @@ sensor:
 
 binary_sensor:
   - platform: template
-    name: "puffer_1_pufferpumpe_an_aus"
+    name: "puffer01_pufferpumpe_an_aus"
     lambda: |-
       if (id(Puffer_1_Pufferpumpen_Ansteuerung).state > 0) {
         return true;

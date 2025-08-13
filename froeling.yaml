@@ -61,11 +61,11 @@ packages:
     files:
       [
         austragung.yaml,
-        boiler_01.yaml,
+        boiler01.yaml,
         heizkreis01.yaml,
         heizkreis02.yaml,
         kessel.yaml,
-        puffer_01.yaml,
+        puffer01.yaml,
         zirkulationspumpe.yaml,
         solarthermie.yaml,
       ]
@@ -75,7 +75,7 @@ packages:
 sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Aussentemperatur"
+    name: "anlage_aussentemperatur"
     register_type: read
     address: 1000
     unit_of_measurement: "°C"
@@ -88,7 +88,7 @@ sensor:
 text_sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Anlagenzustand"
+    name: "anlage_zustand"
     register_type: read
     address: 4000
     raw_encode: HEXBYTES
@@ -110,8 +110,8 @@ text_sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Kesselzustand"
-    id: "Kesselzustand"
+    name: "kessel_zustand"
+    id: "kessel_zustand"
     register_type: read
     address: 4001
     raw_encode: HEXBYTES
