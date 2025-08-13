@@ -23,7 +23,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Verbleibende Heizstunden bis zur Asche entleeren Warnung"
+    name: "Verbleibende_Heizstunden_bis_zur_Asche_entleeren_Warnung"
     register_type: read
     address: 86
     unit_of_measurement: "h"
@@ -31,7 +31,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Saugzug - Ansteuerung"
+    name: "Saugzug_Ansteuerung"
     register_type: read
     address: 13
     unit_of_measurement: "%"
@@ -66,7 +66,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Rücklauffühler"
+    name: "Ruecklauffuehler"
     register_type: read
     address: 9
     unit_of_measurement: "°C"
@@ -78,7 +78,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Primärluft"
+    name: "Primaerluft"
     register_type: read
     address: 11
     unit_of_measurement: "%"
@@ -86,9 +86,9 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Sekundärluft"
+    name: "Sekundaerluft"
     register_type: read
-    address: 12
+    address: 13
     unit_of_measurement: "%"
     value_type: U_WORD
 
@@ -102,7 +102,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Stunden seit letzter Wartung"
+    name: "Stunden_seit_letzter_Wartung"
     register_type: read
     address: 55
     unit_of_measurement: "h"
@@ -110,17 +110,38 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Betriebsstunden in der Feuererhaltung"
+    name: "Betriebsstunden_in_der_Feuererhaltung"
     register_type: read
     address: 24
     unit_of_measurement: "h"
     value_type: U_WORD
 
+number:
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "Kessel_Solltemperatur"
+    address: 0
+    unit_of_measurement: "°C"
+    value_type: U_WORD
+    multiply: 2
+    min_value: 70
+    max_value: 90
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "Bei_welcher_RL_Temperatur_an_der_Zirkulationsleitung_soll_die_Pumpe_ausschalten"
+    address: 600
+    unit_of_measurement: "°C"
+    value_type: U_WORD
+    multiply: 2
+    min_value: 20
+    max_value: 120
+
 binary_sensor:
   - platform: template
-    name: "Kesselzustand Heizen"
+    name: "Kesselzustand_Heizen"
     lambda: |-
-      if (id(${name}_Kesselzustand).state == "Heizen") {
+      if (id(Kesselzustand).state == "Heizen") {
         return true;
       } else {
         return false;

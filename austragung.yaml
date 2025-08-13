@@ -1,7 +1,7 @@
 sensor:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Fuellstand im Pelletsbehaelter"
+    name: "Fuellstand_im_Pelletsbehaelter"
     register_type: read
     address: 21
     unit_of_measurement: "%"
@@ -12,7 +12,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Resetierbarer kg-Zaehler"
+    name: "Resetierbarer_kg_Zaehler"
     register_type: read
     address: 81
     unit_of_measurement: "kg"
@@ -22,7 +22,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Resetierbarer t-Zaehler"
+    name: "Resetierbarer_t_Zaehler"
     register_type: read
     address: 82
     unit_of_measurement: "t"
@@ -32,7 +32,7 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Pelletverbrauch Gesamt"
+    name: "Pelletverbrauch_Gesamt"
     register_type: read
     address: 83
     unit_of_measurement: "t"
@@ -43,9 +43,10 @@ sensor:
     filters:
       - multiply: 0.1
 
+  # number:
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "Pelletlager Restbestand"
+    name: "Pelletlager_Restbestand"
     register_type: holding
     address: 319
     unit_of_measurement: "t"
