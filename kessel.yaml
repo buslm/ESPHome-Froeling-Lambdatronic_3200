@@ -139,7 +139,7 @@ number:
 
 binary_sensor:
   - platform: template
-    name: "kesselzustand_heizen"
+    name: "kessel_zustand_heizen"
     lambda: |-
       if (id(kessel_zustand).state == "Heizen") {
         return true;
