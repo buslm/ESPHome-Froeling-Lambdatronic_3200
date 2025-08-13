@@ -361,7 +361,7 @@ views:
             entity: sensor.froeling_austragung_pelletverbrauch_gesamt
             label: Pelletverbrauch Gesamt
           - id: txt_storage-counter
-            entity: number.froeling_austragung_pelletlager_restbestand
+            entity: sensor.froeling_austragung_pelletlager_restbestand
             label: Restbestand im Brennstofflagerraum
       - type: entities
         entities:
@@ -371,7 +371,7 @@ views:
             name: Zählwert Verbauch
           - entity: sensor.froeling_austragung_resetierbarer_kg_zaehler
             name: Zählwert Verbauch
-          - entity: number.froeling_austragung_pelletlager_restbestand
+          - entity: sensor.froeling_austragung_pelletlager_restbestand
             secondary_info: last-changed
             name: Sacksilo Restbestand
           - entity: sensor.froeling_austragung_pelletverbrauch_gesamt
