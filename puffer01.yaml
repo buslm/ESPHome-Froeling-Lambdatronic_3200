@@ -56,7 +56,7 @@ binary_sensor:
   - platform: template
     name: "puffer01_pufferpumpe_an_aus"
     lambda: |-
-      if (id(Puffer_1_Pufferpumpen_Ansteuerung).state > 0) {
+      if (id(puffer01_pufferpumpen_ansteuerung).state > 0) {
         return true;
       } else {
         return false;
